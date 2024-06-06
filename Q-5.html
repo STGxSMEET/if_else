@@ -1,0 +1,14 @@
+<script>
+
+    let char = prompt("Enter a character: ");
+    char = char.toLowerCase();
+    
+    if (char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u') {
+      document.write(`${char} is a vowel`);
+    } else if (char >= 'a' && char <= 'z') {
+      document.write(`${char} is a consonant`);
+    } else {
+      document.write(`${char} is not a letter`);
+    }
+
+</script>

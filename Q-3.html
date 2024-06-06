@@ -1,0 +1,18 @@
+<script type="text/javascript">
+
+
+    let year = parseInt(prompt("Enter a year: "));
+
+function isLeapYear(year) {
+  if (year % 400 === 0) return true;
+  if (year % 100 === 0) return false;
+  return year % 4 === 0;
+}
+
+if (isLeapYear(year)) {
+  document.write(`${year} is a leap year`);
+} else {
+  document.write(`${year} is not a leap year`);
+}
+
+</script>

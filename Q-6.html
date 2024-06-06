@@ -1,0 +1,82 @@
+<script>
+
+    let totalCost = 0;
+const discountThreshold = 100;  
+const discountRate = 0.10;  
+
+let numItems = parseInt(prompt("How many items do you want to enter?"), 10);
+
+if (!isNaN(numItems) && numItems > 0) {
+    console.log(`You will enter ${numItems} items.`);
+
+    if (numItems >= 1) {
+        let item1 = prompt("Enter the name of the first item: ");
+        let price1 = parseFloat(prompt(`Enter price for ${item1}: $`));
+        if (!isNaN(price1) && price1 > 0) {
+            let quantity1 = parseInt(prompt(`Enter quantity for ${item1}: `), 10);
+            if (!isNaN(quantity1) && quantity1 > 0) {
+                let itemTotal1 = price1 * quantity1;
+                totalCost += itemTotal1;
+                console.log(`Added ${item1} - ${quantity1} x $${price1.toFixed(2)} = $${itemTotal1.toFixed(2)} to the cart.`);
+                console.log(`Current total cost: $${totalCost.toFixed(2)}\n`);
+            } else {
+                console.log("Invalid quantity. Item skipped.");
+            }
+        } else {
+            console.log("Invalid price. Item skipped.");
+        }
+    }
+
+
+    if (numItems >= 2) {
+        let item2 = prompt("Enter the name of the second item: ");
+        let price2 = parseFloat(prompt(`Enter price for ${item2}: $`));
+        if (!isNaN(price2) && price2 > 0) {
+            let quantity2 = parseInt(prompt(`Enter quantity for ${item2}: `), 10);
+            if (!isNaN(quantity2) && quantity2 > 0) {
+                let itemTotal2 = price2 * quantity2;
+                totalCost += itemTotal2;
+                console.log(`Added ${item2} - ${quantity2} x $${price2.toFixed(2)} = $${itemTotal2.toFixed(2)} to the cart.`);
+                console.log(`Current total cost: $${totalCost.toFixed(2)}\n`);
+            } else {
+                console.log("Invalid quantity. Item skipped.");
+            }
+        } else {
+            console.log("Invalid price. Item skipped.");
+        }
+    }
+
+    if (numItems >= 3) {
+        let item3 = prompt("Enter the name of the third item: ");
+        let price3 = parseFloat(prompt(`Enter price for ${item3}: $`));
+        if (!isNaN(price3) && price3 > 0) {
+            let quantity3 = parseInt(prompt(`Enter quantity for ${item3}: `), 10);
+            if (!isNaN(quantity3) && quantity3 > 0) {
+                let itemTotal3 = price3 * quantity3;
+                totalCost += itemTotal3;
+                console.log(`Added ${item3} - ${quantity3} x $${price3.toFixed(2)} = $${itemTotal3.toFixed(2)} to the cart.`);
+                console.log(`Current total cost: $${totalCost.toFixed(2)}\n`);
+            } else {
+                console.log("Invalid quantity. Item skipped.");
+            }
+        } else {
+            console.log("Invalid price. Item skipped.");
+        }
+    }
+
+    
+    if (totalCost > discountThreshold) {
+        let discount = totalCost * discountRate;
+        totalCost -= discount;
+        console.log(`A discount of $${discount.toFixed(2)} has been applied.`);
+    } else {
+        console.log("No discount applied.");
+    }
+
+    console.log(`Final total cost: $${totalCost.toFixed(2)}`);
+} else {
+    console.log("Invalid number of items.");
+}
+
+
+</script>
